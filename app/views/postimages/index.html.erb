@@ -1,0 +1,21 @@
+<h1>投稿一覧</h1>
+
+
+<% @postimages.each do |postimage| %>
+
+  <div>
+    <h4>投稿ユーザー画像</h4>
+    <%= image_tag 'sample-author1.jpg' %><br>
+
+    <%= link_to postimage_path(postimage.id) do %>
+      <%= image_tag postimage.get_image %>
+    <% end %>
+
+    <h4>ショップ名</h4>
+    <%= postimage.shop_name %>
+
+    <h4>説明</h4>
+    <%= postimage.caption %>
+  </div>
+
+<% end %>
