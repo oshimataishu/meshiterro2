@@ -5,7 +5,7 @@
 
   <div>
     <h4>投稿ユーザー画像</h4>
-    <%= image_tag 'sample-author1.jpg' %><br>
+    <%= image_tag postimage.user.get_profile_image(100,100) %><br>
 
     <%= link_to postimage_path(postimage.id) do %>
       <%= image_tag postimage.get_image %>
@@ -16,6 +16,8 @@
 
     <h4>説明</h4>
     <%= postimage.caption %>
+
+    <p>コメント件数: <%= postimage.postcomments.count %></p>
   </div>
 
 <% end %>
